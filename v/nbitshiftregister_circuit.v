@@ -9,11 +9,11 @@ module top_module #(parameter N = 16)(
     output reg [N-1:0] Q
     );
 
-    //localparam sc = 5; //stage sayısını kullanmama gerekirse diye
-    // art arda sentezde g�rebilecek miyim diye bakmak istedim ama en son q yu ff_out a atarken bir hata ��kt� ��zemdim o y�zden istenilen �eklilde b�rakt�m
+    //localparam sc = 5; //stage sayÄ±sÄ±nÄ± kullanmama gerekirse diye
+    // art arda bölümleri birbirine bağlayıp sentezde görebilecek miyim diye bakmak istedim ama en son q yu ff_out a atarken bir hata çýktý çözemdim o yüzden istenilen þeklilde býraktým
 
-    wire [N-1:0] mux_out1 ; //soldakiler çıkışlarn bit genişliği
-    wire [N-1:0] mux_out2 ; //sağdakiler gerekli sc kadar çıkış
+    wire [N-1:0] mux_out1 ; //soldakiler Ã§Ä±kÄ±ÅŸlarn bit geniÅŸliÄŸi
+    wire [N-1:0] mux_out2 ; //saÄŸdakiler gerekli sc kadar Ã§Ä±kÄ±ÅŸ
     wire [N-1:0] ff_out = Q ; 
     
         mux #(16) m1(
