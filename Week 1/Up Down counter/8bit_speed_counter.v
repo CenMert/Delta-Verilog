@@ -4,10 +4,11 @@ module bit8_speed_counter_1bit1sec(
     input [3:0] speed,
     input clk,
     output [7:0] counter
+    
     );
 
     reg [7:0] reg_counter;
-    reg [31:0] clk_counter;
+    reg [7:0] clk_counter;
     reg count_direction;
 
     initial begin
@@ -21,7 +22,7 @@ module bit8_speed_counter_1bit1sec(
         clk_counter <= clk_counter + 1;
 
         if (speed == 1) begin
-            if (clk_counter == 1000000000) begin
+            if (clk_counter == 100000000) begin
                 clk_counter <= 0;
                 if(count_direction == 1)begin
                         reg_counter <= reg_counter + 1;
@@ -41,7 +42,7 @@ module bit8_speed_counter_1bit1sec(
         end
 
         if (speed == 4) begin
-            if (clk_counter == 1000000000) begin
+            if (clk_counter == 100000000) begin
                 clk_counter <= 0;
                 if(count_direction == 1)begin
                         reg_counter <= reg_counter + 4;
